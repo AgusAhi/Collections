@@ -24,10 +24,11 @@ public class Set1 {
         increment(set);
         System.out.println(set);
          */
-
-        printWithoutDuplicates("a", "b", "a", "c", "b", "a", "d");
-        printDuplicates("a", "b", "a", "c", "b", "a", "d");
-        printDuplicates2("a", "b", "a", "c", "b", "a", "d");
+        String [] array = {"B", "C", "A", "D"};
+        System.out.println("* SET");
+        printWithoutDuplicates(array);
+        printDuplicates(array);
+        printDuplicates2(array);
         Set<String> set1 = new HashSet<>();
         set1.add("a");
         set1.add("b");
@@ -39,6 +40,29 @@ public class Set1 {
         Set<String> result = new HashSet<>();
         System.out.println(getIntersection(set1, set2));
         System.out.println(getIntersection2(set1, set2));
+
+        System.out.println("* LIST");
+        System.out.println("----PrintArray----");
+        printArray(array);
+        System.out.println("----SortedArray----");
+        sortArray(array);
+        System.out.println("----Shuffle----");
+        shuffle(array);
+
+    }
+
+    private static void printArray(String [] array) {
+        boolean first = true;
+        System.out.print("[");
+        for (String s : array) {
+            if (first) {
+                first = false;
+            } else {
+                System.out.print(", ");
+            }
+            System.out.print(s);
+        }
+        System.out.println("]");
     }
 
     // Exercise 1
@@ -116,6 +140,20 @@ public class Set1 {
             }
         }
         return result;
+    }
+
+    // LISTS
+
+    public static void sortArray(String... array) {
+        List<String> list = Arrays.asList(array);
+        Collections.sort(list);
+        System.out.println(list);
+    }
+
+    public static void shuffle(String... array) {
+        List<String> list = Arrays.asList(array);
+        Collections.shuffle(list);
+        System.out.println(list);
     }
 }
 
