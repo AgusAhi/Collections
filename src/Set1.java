@@ -155,5 +155,9 @@ public class Set1 {
         Collections.shuffle(list);
         System.out.println(list);
     }
+
+    // SortedText in my gitGithub AgusAhi
+
+
 }
 
